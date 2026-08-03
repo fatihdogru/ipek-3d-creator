@@ -22,6 +22,10 @@ export interface ContactCopy {
   companyPlaceholder: string;
   optional: string;
   multiHint: string;
+  /** Intro above the direct e-mail address. */
+  mailLabel: string;
+  /** Intro above the social profile buttons. */
+  socialLabel: string;
   /** Options for this one come from `services.items`, so they stay in sync. */
   servicesLabel: string;
   deliverables: ChoiceGroup;
@@ -138,6 +142,8 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Studio name',
       optional: 'optional',
       multiHint: 'select all that apply',
+      mailLabel: 'Mail me at',
+      socialLabel: 'Or find me on',
       servicesLabel: 'What do you need?',
       deliverables: {
         label: 'Expected deliverables',
@@ -239,6 +245,8 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Stüdyo adı',
       optional: 'isteğe bağlı',
       multiHint: 'birden fazla seçebilirsiniz',
+      mailLabel: 'E-posta ile ulaşın',
+      socialLabel: 'Ya da beni burada bulun',
       servicesLabel: 'Neye ihtiyacınız var?',
       deliverables: {
         label: 'Beklenen teslimat',
@@ -340,6 +348,8 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Nom du studio',
       optional: 'facultatif',
       multiHint: 'plusieurs choix possibles',
+      mailLabel: 'Écrivez-moi à',
+      socialLabel: 'Ou retrouvez-moi sur',
       servicesLabel: 'De quoi avez-vous besoin ?',
       deliverables: {
         label: 'Livrables attendus',
@@ -442,6 +452,8 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'اسم الاستوديو',
       optional: 'اختياري',
       multiHint: 'يمكن اختيار أكثر من خيار',
+      mailLabel: 'راسلني على',
+      socialLabel: 'أو تابعني على',
       servicesLabel: 'ما الذي تحتاجه؟',
       deliverables: {
         label: 'المخرجات المتوقعة',
@@ -542,6 +554,8 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Studioname',
       optional: 'optional',
       multiHint: 'Mehrfachauswahl möglich',
+      mailLabel: 'Schreib mir an',
+      socialLabel: 'Oder finde mich auf',
       servicesLabel: 'Was brauchst du?',
       deliverables: {
         label: 'Erwartete Ergebnisse',
@@ -642,6 +656,8 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Название студии',
       optional: 'необязательно',
       multiHint: 'можно выбрать несколько',
+      mailLabel: 'Напишите мне на',
+      socialLabel: 'Или найдите меня здесь',
       servicesLabel: 'Что вам нужно?',
       deliverables: {
         label: 'Ожидаемый результат',

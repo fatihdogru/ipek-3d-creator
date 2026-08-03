@@ -5,6 +5,38 @@ export interface ServiceCopy {
   description: string;
 }
 
+/** A labelled set of preset answers rendered as selectable chips. */
+export interface ChoiceGroup {
+  label: string;
+  options: string[];
+}
+
+export interface ContactCopy {
+  title: string;
+  subtitle: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  companyLabel: string;
+  companyPlaceholder: string;
+  optional: string;
+  multiHint: string;
+  /** Options for this one come from `services.items`, so they stay in sync. */
+  servicesLabel: string;
+  deliverables: ChoiceGroup;
+  budget: ChoiceGroup;
+  timeline: ChoiceGroup;
+  messageLabel: string;
+  messagePlaceholder: string;
+  submit: string;
+  sending: string;
+  successTitle: string;
+  successBody: string;
+  errorText: string;
+  close: string;
+}
+
 export interface Translation {
   /** BCP-47 tag written to <html lang>. Drives locale-aware text-transform. */
   htmlLang: string;
@@ -21,6 +53,7 @@ export interface Translation {
   about: { title: string; body: string };
   services: { title: string; items: ServiceCopy[] };
   projects: { title: string };
+  contact: ContactCopy;
 }
 
 export const LANGUAGES: { code: LangCode; label: string; short: string }[] = [
@@ -94,6 +127,46 @@ export const translations: Record<LangCode, Translation> = {
       ],
     },
     projects: { title: 'Project' },
+    contact: {
+      title: "Let's work together",
+      subtitle: 'A few quick questions so I can send you an accurate quote.',
+      nameLabel: 'Your name',
+      namePlaceholder: 'Jane Doe',
+      emailLabel: 'Email',
+      emailPlaceholder: 'you@example.com',
+      companyLabel: 'Company / studio',
+      companyPlaceholder: 'Studio name',
+      optional: 'optional',
+      multiHint: 'select all that apply',
+      servicesLabel: 'What do you need?',
+      deliverables: {
+        label: 'Expected deliverables',
+        options: [
+          'Still renders / images',
+          'Animation / video',
+          'Game-ready files (FBX, UE project)',
+          'Interactive / real-time build',
+          'Not sure yet',
+        ],
+      },
+      budget: {
+        label: 'Budget range (USD)',
+        options: ['< $500', '$500 – $1,500', '$1,500 – $5,000', '$5,000+', 'Not sure yet'],
+      },
+      timeline: {
+        label: 'Timeline',
+        options: ['ASAP (1–2 weeks)', 'Within 1 month', '1–3 months', 'Flexible'],
+      },
+      messageLabel: 'Tell me about the project',
+      messagePlaceholder:
+        'Scope, visual references, engine / software, target platform…',
+      submit: 'Send request',
+      sending: 'Sending…',
+      successTitle: 'Request received!',
+      successBody: "Thank you — I'll get back to you by email within 1–2 business days.",
+      errorText: 'Something went wrong. Please try again in a moment.',
+      close: 'Close',
+    },
   },
 
   tr: {
@@ -155,6 +228,46 @@ export const translations: Record<LangCode, Translation> = {
       ],
     },
     projects: { title: 'Proje' },
+    contact: {
+      title: 'Birlikte çalışalım',
+      subtitle: 'Size net bir teklif iletebilmem için birkaç kısa soru.',
+      nameLabel: 'Adınız',
+      namePlaceholder: 'Ayşe Yılmaz',
+      emailLabel: 'E-posta',
+      emailPlaceholder: 'ornek@eposta.com',
+      companyLabel: 'Şirket / stüdyo',
+      companyPlaceholder: 'Stüdyo adı',
+      optional: 'isteğe bağlı',
+      multiHint: 'birden fazla seçebilirsiniz',
+      servicesLabel: 'Neye ihtiyacınız var?',
+      deliverables: {
+        label: 'Beklenen teslimat',
+        options: [
+          'Render görselleri',
+          'Animasyon / video',
+          'Oyuna hazır dosyalar (FBX, UE projesi)',
+          'Etkileşimli / gerçek zamanlı build',
+          'Henüz emin değilim',
+        ],
+      },
+      budget: {
+        label: 'Bütçe aralığı (USD)',
+        options: ['500 $ altı', '500 – 1.500 $', '1.500 – 5.000 $', '5.000 $ ve üzeri', 'Henüz emin değilim'],
+      },
+      timeline: {
+        label: 'Zaman planı',
+        options: ['Acil (1–2 hafta)', '1 ay içinde', '1–3 ay', 'Esnek'],
+      },
+      messageLabel: 'Projeden bahsedin',
+      messagePlaceholder:
+        'Kapsam, referans görseller, kullanılacak yazılım / motor, hedef platform…',
+      submit: 'Talebi gönder',
+      sending: 'Gönderiliyor…',
+      successTitle: 'Talebiniz alındı!',
+      successBody: 'Teşekkürler — 1–2 iş günü içinde e-posta ile dönüş yapacağım.',
+      errorText: 'Bir şeyler ters gitti. Lütfen birazdan tekrar deneyin.',
+      close: 'Kapat',
+    },
   },
 
   fr: {
@@ -216,6 +329,46 @@ export const translations: Record<LangCode, Translation> = {
       ],
     },
     projects: { title: 'Projet' },
+    contact: {
+      title: 'Travaillons ensemble',
+      subtitle: 'Quelques questions rapides pour vous envoyer un devis précis.',
+      nameLabel: 'Votre nom',
+      namePlaceholder: 'Jean Dupont',
+      emailLabel: 'E-mail',
+      emailPlaceholder: 'vous@exemple.com',
+      companyLabel: 'Entreprise / studio',
+      companyPlaceholder: 'Nom du studio',
+      optional: 'facultatif',
+      multiHint: 'plusieurs choix possibles',
+      servicesLabel: 'De quoi avez-vous besoin ?',
+      deliverables: {
+        label: 'Livrables attendus',
+        options: [
+          'Rendus / images fixes',
+          'Animation / vidéo',
+          'Fichiers prêts pour le jeu (FBX, projet UE)',
+          'Build interactif / temps réel',
+          'Pas encore sûr',
+        ],
+      },
+      budget: {
+        label: 'Budget (USD)',
+        options: ['< 500 $', '500 – 1 500 $', '1 500 – 5 000 $', '5 000 $ +', 'Pas encore sûr'],
+      },
+      timeline: {
+        label: 'Délais',
+        options: ['Urgent (1–2 semaines)', 'Sous 1 mois', '1–3 mois', 'Flexible'],
+      },
+      messageLabel: 'Parlez-moi du projet',
+      messagePlaceholder:
+        'Périmètre, références visuelles, moteur / logiciel, plateforme cible…',
+      submit: 'Envoyer la demande',
+      sending: 'Envoi…',
+      successTitle: 'Demande reçue !',
+      successBody: 'Merci — je vous réponds par e-mail sous 1 à 2 jours ouvrés.',
+      errorText: 'Une erreur est survenue. Veuillez réessayer dans un instant.',
+      close: 'Fermer',
+    },
   },
 
   ar: {
@@ -278,6 +431,45 @@ export const translations: Record<LangCode, Translation> = {
       ],
     },
     projects: { title: 'مشروع' },
+    contact: {
+      title: 'لنعمل معًا',
+      subtitle: 'بضعة أسئلة سريعة حتى أتمكن من إرسال عرض سعر دقيق.',
+      nameLabel: 'اسمك',
+      namePlaceholder: 'الاسم الكامل',
+      emailLabel: 'البريد الإلكتروني',
+      emailPlaceholder: 'you@example.com',
+      companyLabel: 'الشركة / الاستوديو',
+      companyPlaceholder: 'اسم الاستوديو',
+      optional: 'اختياري',
+      multiHint: 'يمكن اختيار أكثر من خيار',
+      servicesLabel: 'ما الذي تحتاجه؟',
+      deliverables: {
+        label: 'المخرجات المتوقعة',
+        options: [
+          'صور ثابتة / تصييرات',
+          'أنيميشن / فيديو',
+          'ملفات جاهزة للألعاب (FBX، مشروع UE)',
+          'تجربة تفاعلية / بناء لحظي',
+          'لست متأكدًا بعد',
+        ],
+      },
+      budget: {
+        label: 'نطاق الميزانية (دولار)',
+        options: ['أقل من 500 $', '500 – 1,500 $', '1,500 – 5,000 $', '5,000 $ فأكثر', 'لست متأكدًا بعد'],
+      },
+      timeline: {
+        label: 'الجدول الزمني',
+        options: ['عاجل (1–2 أسبوع)', 'خلال شهر', '1–3 أشهر', 'مرن'],
+      },
+      messageLabel: 'أخبرني عن المشروع',
+      messagePlaceholder: 'النطاق، مراجع بصرية، المحرك / البرنامج، المنصة المستهدفة…',
+      submit: 'إرسال الطلب',
+      sending: 'جارٍ الإرسال…',
+      successTitle: 'تم استلام طلبك!',
+      successBody: 'شكرًا لك — سأرد عليك عبر البريد خلال يوم إلى يومَي عمل.',
+      errorText: 'حدث خطأ ما. يرجى المحاولة مرة أخرى بعد قليل.',
+      close: 'إغلاق',
+    },
   },
 
   de: {
@@ -339,6 +531,45 @@ export const translations: Record<LangCode, Translation> = {
       ],
     },
     projects: { title: 'Projekt' },
+    contact: {
+      title: 'Lass uns zusammenarbeiten',
+      subtitle: 'Ein paar kurze Fragen, damit ich dir ein passendes Angebot schicken kann.',
+      nameLabel: 'Dein Name',
+      namePlaceholder: 'Max Mustermann',
+      emailLabel: 'E-Mail',
+      emailPlaceholder: 'du@beispiel.de',
+      companyLabel: 'Firma / Studio',
+      companyPlaceholder: 'Studioname',
+      optional: 'optional',
+      multiHint: 'Mehrfachauswahl möglich',
+      servicesLabel: 'Was brauchst du?',
+      deliverables: {
+        label: 'Erwartete Ergebnisse',
+        options: [
+          'Standbilder / Renderings',
+          'Animation / Video',
+          'Game-ready Dateien (FBX, UE-Projekt)',
+          'Interaktiver / Echtzeit-Build',
+          'Noch unklar',
+        ],
+      },
+      budget: {
+        label: 'Budgetrahmen (USD)',
+        options: ['< 500 $', '500 – 1.500 $', '1.500 – 5.000 $', '5.000 $ +', 'Noch unklar'],
+      },
+      timeline: {
+        label: 'Zeitrahmen',
+        options: ['Dringend (1–2 Wochen)', 'Innerhalb eines Monats', '1–3 Monate', 'Flexibel'],
+      },
+      messageLabel: 'Erzähl mir vom Projekt',
+      messagePlaceholder: 'Umfang, visuelle Referenzen, Engine / Software, Zielplattform…',
+      submit: 'Anfrage senden',
+      sending: 'Wird gesendet…',
+      successTitle: 'Anfrage erhalten!',
+      successBody: 'Danke — ich melde mich innerhalb von 1–2 Werktagen per E-Mail.',
+      errorText: 'Etwas ist schiefgelaufen. Bitte versuche es gleich noch einmal.',
+      close: 'Schließen',
+    },
   },
 
   ru: {
@@ -400,5 +631,44 @@ export const translations: Record<LangCode, Translation> = {
       ],
     },
     projects: { title: 'Проект' },
+    contact: {
+      title: 'Давайте поработаем вместе',
+      subtitle: 'Несколько коротких вопросов, чтобы я могла подготовить точную смету.',
+      nameLabel: 'Ваше имя',
+      namePlaceholder: 'Иван Иванов',
+      emailLabel: 'E-mail',
+      emailPlaceholder: 'you@example.com',
+      companyLabel: 'Компания / студия',
+      companyPlaceholder: 'Название студии',
+      optional: 'необязательно',
+      multiHint: 'можно выбрать несколько',
+      servicesLabel: 'Что вам нужно?',
+      deliverables: {
+        label: 'Ожидаемый результат',
+        options: [
+          'Статичные рендеры / изображения',
+          'Анимация / видео',
+          'Файлы для игры (FBX, проект UE)',
+          'Интерактивный / реалтайм-билд',
+          'Пока не знаю',
+        ],
+      },
+      budget: {
+        label: 'Бюджет (USD)',
+        options: ['< 500 $', '500 – 1 500 $', '1 500 – 5 000 $', '5 000 $ +', 'Пока не знаю'],
+      },
+      timeline: {
+        label: 'Сроки',
+        options: ['Срочно (1–2 недели)', 'В течение месяца', '1–3 месяца', 'Гибкие'],
+      },
+      messageLabel: 'Расскажите о проекте',
+      messagePlaceholder: 'Объём, референсы, движок / софт, целевая платформа…',
+      submit: 'Отправить заявку',
+      sending: 'Отправка…',
+      successTitle: 'Заявка получена!',
+      successBody: 'Спасибо — отвечу по электронной почте в течение 1–2 рабочих дней.',
+      errorText: 'Что-то пошло не так. Пожалуйста, попробуйте ещё раз.',
+      close: 'Закрыть',
+    },
   },
 };

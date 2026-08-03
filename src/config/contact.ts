@@ -2,13 +2,8 @@ import { Instagram, Linkedin, Youtube } from 'lucide-react';
 import type { ComponentType } from 'react';
 import ArtStationIcon from '../components/icons/ArtStationIcon';
 
-/**
- * Contact details shown in the contact dialog.
- *
- * TODO: replace with the real address — this placeholder domain is reserved
- * for documentation and will never receive mail.
- */
-export const CONTACT_EMAIL = 'ipek@example.com';
+/** Address shown in the contact dialog, alongside the form itself. */
+export const CONTACT_EMAIL = 'dogruipekk@gmail.com';
 
 export interface SocialLink {
   name: string;

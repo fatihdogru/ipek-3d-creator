@@ -1,20 +1,24 @@
+import StarCursor from './components/StarCursor';
 import { LanguageProvider } from './i18n/LanguageProvider';
 import AboutSection from './sections/AboutSection';
+import GallerySection from './sections/GallerySection';
 import HeroSection from './sections/HeroSection';
-import MarqueeSection from './sections/MarqueeSection';
 import ProjectsSection from './sections/ProjectsSection';
-import ServicesSection from './sections/ServicesSection';
 
 export default function App() {
   return (
     <LanguageProvider>
-      <main className="bg-[#0C0C0C]" style={{ overflowX: 'clip' }}>
+      <main className="bg-black" style={{ overflowX: 'clip' }}>
         <HeroSection />
-        <MarqueeSection />
-        <AboutSection />
-        <ServicesSection />
+        <GallerySection />
         <ProjectsSection />
+        <AboutSection />
       </main>
+
+      {/* Outside <main>: its `overflow-x: clip` would risk clipping a fixed
+          overlay, and the cursor has to reach every corner of the viewport.
+          It only takes over inside About; elsewhere the native cursor stays. */}
+      <StarCursor targetId="about" />
     </LanguageProvider>
   );
 }

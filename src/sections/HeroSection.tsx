@@ -49,7 +49,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative flex h-screen flex-col bg-[#0C0C0C]"
+      className="relative flex h-screen flex-col bg-black"
       style={{ overflowX: 'clip' }}
     >
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -93,8 +93,9 @@ export default function HeroSection() {
       <div className="relative z-20 mt-auto flex items-end justify-between gap-4 px-6 pb-7 sm:pb-8 md:px-10 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p
-            className="max-w-[160px] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]"
-            style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
+            /* Single line by request, so no max-width to wrap against. */
+            className="whitespace-nowrap font-serif italic leading-snug tracking-tight text-[#D7E2EA]"
+            style={{ fontSize: 'clamp(0.7rem, 1.6vw, 1.6rem)' }}
           >
             {t.hero.tagline}
           </p>

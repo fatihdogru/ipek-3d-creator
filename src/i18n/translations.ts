@@ -78,7 +78,7 @@ export const translations: Record<LangCode, Translation> = {
     nav: { about: 'About', price: 'Price', projects: 'Projects', contact: 'Contact' },
     hero: {
       title: "Hi, i'm ipek",
-      tagline: 'a 3d creator driven by crafting striking and unforgettable projects',
+      tagline: 'creating digital worlds',
     },
     buttons: { contact: 'Contact Me', liveProject: 'Live Project' },
     about: {
@@ -130,7 +130,7 @@ export const translations: Record<LangCode, Translation> = {
         },
       ],
     },
-    projects: { title: 'Project' },
+    projects: { title: 'Projects' },
     contact: {
       title: "Let's work together",
       subtitle: 'A few quick questions so I can send you an accurate quote.',
@@ -181,7 +181,7 @@ export const translations: Record<LangCode, Translation> = {
     nav: { about: 'Hakkımda', price: 'Fiyat', projects: 'Projeler', contact: 'İletişim' },
     hero: {
       title: 'Merhaba, ben ipek',
-      tagline: 'çarpıcı ve unutulmaz projeler üreten bir 3d tasarımcı',
+      tagline: 'dijital dünyalar yaratıyorum',
     },
     buttons: { contact: 'İletişime Geç', liveProject: 'Projeyi Gör' },
     about: {
@@ -233,7 +233,7 @@ export const translations: Record<LangCode, Translation> = {
         },
       ],
     },
-    projects: { title: 'Proje' },
+    projects: { title: 'Projeler' },
     contact: {
       title: 'Birlikte çalışalım',
       subtitle: 'Size net bir teklif iletebilmem için birkaç kısa soru.',
@@ -284,7 +284,7 @@ export const translations: Record<LangCode, Translation> = {
     nav: { about: 'À propos', price: 'Tarifs', projects: 'Projets', contact: 'Contact' },
     hero: {
       title: 'Salut, je suis ipek',
-      tagline: 'une créatrice 3d qui façonne des projets marquants et inoubliables',
+      tagline: 'je crée des mondes numériques',
     },
     buttons: { contact: 'Me Contacter', liveProject: 'Voir le Projet' },
     about: {
@@ -336,7 +336,7 @@ export const translations: Record<LangCode, Translation> = {
         },
       ],
     },
-    projects: { title: 'Projet' },
+    projects: { title: 'Projets' },
     contact: {
       title: 'Travaillons ensemble',
       subtitle: 'Quelques questions rapides pour vous envoyer un devis précis.',
@@ -388,7 +388,7 @@ export const translations: Record<LangCode, Translation> = {
     heroScale: 0.62,
     hero: {
       title: 'مرحبًا، أنا ايبك',
-      tagline: 'مصممة ثلاثية الأبعاد تصنع مشاريع مميزة لا تُنسى',
+      tagline: 'أصنع عوالم رقمية',
     },
     buttons: { contact: 'تواصل معي', liveProject: 'عرض المشروع' },
     about: {
@@ -440,7 +440,7 @@ export const translations: Record<LangCode, Translation> = {
         },
       ],
     },
-    projects: { title: 'مشروع' },
+    projects: { title: 'المشاريع' },
     contact: {
       title: 'لنعمل معًا',
       subtitle: 'بضعة أسئلة سريعة حتى أتمكن من إرسال عرض سعر دقيق.',
@@ -490,7 +490,7 @@ export const translations: Record<LangCode, Translation> = {
     nav: { about: 'Über mich', price: 'Preise', projects: 'Projekte', contact: 'Kontakt' },
     hero: {
       title: 'Hallo, ich bin ipek',
-      tagline: 'eine 3d-kreative, die eindrucksvolle und unvergessliche projekte gestaltet',
+      tagline: 'ich erschaffe digitale welten',
     },
     buttons: { contact: 'Kontaktiere Mich', liveProject: 'Projekt Ansehen' },
     about: {
@@ -542,7 +542,7 @@ export const translations: Record<LangCode, Translation> = {
         },
       ],
     },
-    projects: { title: 'Projekt' },
+    projects: { title: 'Projekte' },
     contact: {
       title: 'Lass uns zusammenarbeiten',
       subtitle: 'Ein paar kurze Fragen, damit ich dir ein passendes Angebot schicken kann.',
@@ -592,7 +592,7 @@ export const translations: Record<LangCode, Translation> = {
     nav: { about: 'Обо мне', price: 'Цены', projects: 'Проекты', contact: 'Контакты' },
     hero: {
       title: 'Привет, я ипек',
-      tagline: '3d-художник, создающий яркие и незабываемые проекты',
+      tagline: 'создаю цифровые миры',
     },
     buttons: { contact: 'Связаться', liveProject: 'Смотреть Проект' },
     about: {
@@ -644,7 +644,7 @@ export const translations: Record<LangCode, Translation> = {
         },
       ],
     },
-    projects: { title: 'Проект' },
+    projects: { title: 'Проекты' },
     contact: {
       title: 'Давайте поработаем вместе',
       subtitle: 'Несколько коротких вопросов, чтобы я могла подготовить точную смету.',

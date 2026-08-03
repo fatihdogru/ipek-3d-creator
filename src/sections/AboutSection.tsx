@@ -1,10 +1,12 @@
+import BackgroundPixelStars from '@/components/ui/background-pixel-stars';
 import AnimatedText from '../components/AnimatedText';
 import ContactButton from '../components/ContactButton';
 import FadeIn from '../components/FadeIn';
 import { useLanguage } from '../i18n/LanguageProvider';
 
-const BASE =
-  'https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7';
+/** The 2x2 dither tile the starfield demo sits on. */
+const PIXEL_TILE =
+  "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAIElEQVR42mIUEhJiwAbevXuHVZyJgUQwqmEUDB0AEGAADd8DEPTX6ksAAAAASUVORK5CYII=')";
 
 export default function AboutSection() {
   const { lang, t } = useLanguage();
@@ -12,47 +14,21 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10"
+      /* Same lift-and-round seam Services and Projects use on each other, so
+         the closing section joins the stack the way the rest of the page does. */
+      className="relative z-20 -mt-10 flex min-h-screen items-center justify-center overflow-hidden rounded-t-[40px] bg-black px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
     >
-      <FadeIn
-        delay={0.1}
-        x={-80}
-        y={0}
-        duration={0.9}
-        className="pointer-events-none absolute left-[1%] top-[4%] w-[120px] sm:left-[2%] sm:w-[160px] md:left-[4%] md:w-[210px]"
+      {/* The starfield canvas is `fixed inset-0`, which would otherwise ignore
+          this section's bounds and paint over the whole page. `contain: paint`
+          makes this wrapper the containing block for fixed descendants and
+          clips them to it, so the starfield stays inside About. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{ contain: 'paint', backgroundImage: PIXEL_TILE, backgroundSize: '10px' }}
       >
-        <img src={`${BASE}/moon_icon.11395d36.png`} alt="" className="w-full" />
-      </FadeIn>
-
-      <FadeIn
-        delay={0.25}
-        x={-80}
-        y={0}
-        duration={0.9}
-        className="pointer-events-none absolute bottom-[8%] left-[3%] w-[100px] sm:left-[6%] sm:w-[140px] md:left-[10%] md:w-[180px]"
-      >
-        <img src={`${BASE}/p59_1.4659672e.png`} alt="" className="w-full" />
-      </FadeIn>
-
-      <FadeIn
-        delay={0.15}
-        x={80}
-        y={0}
-        duration={0.9}
-        className="pointer-events-none absolute right-[1%] top-[4%] w-[120px] sm:right-[2%] sm:w-[160px] md:right-[4%] md:w-[210px]"
-      >
-        <img src={`${BASE}/lego_icon-1.703bb594.png`} alt="" className="w-full" />
-      </FadeIn>
-
-      <FadeIn
-        delay={0.3}
-        x={80}
-        y={0}
-        duration={0.9}
-        className="pointer-events-none absolute bottom-[8%] right-[3%] w-[130px] sm:right-[6%] sm:w-[170px] md:right-[10%] md:w-[220px]"
-      >
-        <img src={`${BASE}/Group_134-1.2e04f3ce.png`} alt="" className="w-full" />
-      </FadeIn>
+        <BackgroundPixelStars />
+      </div>
 
       <div className="relative z-10 flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
         <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16">

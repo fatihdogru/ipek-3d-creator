@@ -68,7 +68,7 @@ function ProjectCard({ project, index, total, progress }: ProjectCardProps) {
     <div className="sticky top-24 flex h-[85vh] items-start justify-center md:top-32">
       <motion.article
         style={{ scale, top: `${index * 28}px` }}
-        className={`relative w-full max-w-6xl border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 ${RADIUS}`}
+        className={`relative w-full max-w-6xl border-2 border-[#D7E2EA] bg-black p-4 sm:p-6 md:p-8 ${RADIUS}`}
       >
         <div className="flex flex-wrap items-center justify-between gap-4 px-2 pb-6 sm:px-4 md:pb-8">
           <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
@@ -143,7 +143,7 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={container}
-      className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
+      className="relative z-10 -mt-10 rounded-t-[40px] bg-black px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
     >
       <FadeIn delay={0} y={40}>
         <h2

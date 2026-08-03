@@ -39,7 +39,13 @@ export default function AnimatedText({ text, className, style, perWord }: Animat
   const ref = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 0.8', 'end 0.2'],
+    /**
+     * Finishes while the text is still low on the screen, because this sits in
+     * the last section on the page: once the document bottom is reached the
+     * paragraph stops climbing at roughly mid-viewport, so any end offset above
+     * that would leave the reveal permanently stuck part-way through.
+     */
+    offset: ['start 0.9', 'end 0.8'],
   });
 
   const words = text.split(' ');

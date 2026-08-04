@@ -23,6 +23,67 @@ html.star-cursor * {
   cursor: none !important;
 }
 
+/* --- Breakdown section: fluid size scale, display face, cue animations --- */
+
+:root {
+  --pad-x: clamp(1.25rem, 4.5vw, 5rem);
+  --main-py: clamp(1.25rem, 4vh, 4rem);
+  --micro: clamp(0.55rem, 0.25vw + 0.45rem, 0.7rem);
+  --btn-gap: clamp(0.75rem, 1vw, 1.1rem);
+  --wipe-label: clamp(1.05rem, 1.3vw + 0.55rem, 2rem);
+  --wipe-title: clamp(1.9rem, 3.4vw + 0.6rem, 4.5rem);
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes reveal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Elastic nudge that hints the wipe handle can be dragged to the right. */
+@keyframes reveal-rubber {
+  0%,
+  58% {
+    transform: translateX(0);
+  }
+  68% {
+    transform: translateX(0.75rem);
+  }
+  77% {
+    transform: translateX(-0.2rem);
+  }
+  86% {
+    transform: translateX(0.4rem);
+  }
+  94% {
+    transform: translateX(-0.1rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.anim-fade-in {
+  animation: reveal-fade-in 0.25s ease-out both;
+}
+
+.anim-rubber {
+  animation: reveal-rubber 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-rubber {
+    animation: none;
+  }
+}
+
 .hero-heading {
   background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
   -webkit-background-clip: text;

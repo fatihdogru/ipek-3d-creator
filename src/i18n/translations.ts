@@ -22,6 +22,7 @@ export interface ContactCopy {
   companyPlaceholder: string;
   optional: string;
   multiHint: string;
+  choose: string;
   /** Intro above the direct e-mail address. */
   mailLabel: string;
   /** Intro above the social profile buttons. */
@@ -142,6 +143,7 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Studio name',
       optional: 'optional',
       multiHint: 'select all that apply',
+      choose: 'Select…',
       mailLabel: 'Mail me at',
       socialLabel: 'Or find me on',
       servicesLabel: 'What do you need?',
@@ -245,6 +247,7 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Stüdyo adı',
       optional: 'isteğe bağlı',
       multiHint: 'birden fazla seçebilirsiniz',
+      choose: 'Seçiniz…',
       mailLabel: 'E-posta ile ulaşın',
       socialLabel: 'Ya da beni burada bulun',
       servicesLabel: 'Neye ihtiyacınız var?',
@@ -348,6 +351,7 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Nom du studio',
       optional: 'facultatif',
       multiHint: 'plusieurs choix possibles',
+      choose: 'Sélectionner…',
       mailLabel: 'Écrivez-moi à',
       socialLabel: 'Ou retrouvez-moi sur',
       servicesLabel: 'De quoi avez-vous besoin ?',
@@ -452,6 +456,7 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'اسم الاستوديو',
       optional: 'اختياري',
       multiHint: 'يمكن اختيار أكثر من خيار',
+      choose: 'اختر…',
       mailLabel: 'راسلني على',
       socialLabel: 'أو تابعني على',
       servicesLabel: 'ما الذي تحتاجه؟',
@@ -554,6 +559,7 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Studioname',
       optional: 'optional',
       multiHint: 'Mehrfachauswahl möglich',
+      choose: 'Auswählen…',
       mailLabel: 'Schreib mir an',
       socialLabel: 'Oder finde mich auf',
       servicesLabel: 'Was brauchst du?',
@@ -656,6 +662,7 @@ export const translations: Record<LangCode, Translation> = {
       companyPlaceholder: 'Название студии',
       optional: 'необязательно',
       multiHint: 'можно выбрать несколько',
+      choose: 'Выберите…',
       mailLabel: 'Напишите мне на',
       socialLabel: 'Или найдите меня здесь',
       servicesLabel: 'Что вам нужно?',

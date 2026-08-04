@@ -1,6 +1,7 @@
 import StarCursor from './components/StarCursor';
 import { LanguageProvider } from './i18n/LanguageProvider';
 import AboutSection from './sections/AboutSection';
+import BreakdownSection from './sections/BreakdownSection';
 import GallerySection from './sections/GallerySection';
 import HeroSection from './sections/HeroSection';
 import ProjectsSection from './sections/ProjectsSection';
@@ -12,6 +13,7 @@ export default function App() {
         <HeroSection />
         <GallerySection />
         <ProjectsSection />
+        <BreakdownSection />
         <AboutSection />
       </main>
 
